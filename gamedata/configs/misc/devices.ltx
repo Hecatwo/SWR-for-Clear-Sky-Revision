@@ -360,8 +360,8 @@ inv_grid_y		= 21
 cost			= 12400
 
 ; elite x="0.00096" y="0.0035"
-ui_p			= -0.02904,-0.0389,0.00605 ;From Cover bone x,y,z. x -right +left, y -up +down
-ui_r			= 0,0,0
+ui_p                                     = -0.02904,-0.0389,0.00705
+ui_r									 = 0,0,0
 
 af_radius		= 30
 af_vis_radius		= 6
@@ -419,49 +419,35 @@ zone_freq_20		= 0.05, 2
 zone_freq_21		= 0.05, 2
 zone_freq_22		= 0.05, 2
 
-![detector_scientific_hud]
-hands_position							 = 0.023100,-0.069500,-0.061300
-hands_orientation						 = 0.0,0.0,0.0
-hands_position_16x9						 = 0.023100,-0.069500,-0.061300
-hands_orientation_16x9					 = 0.0,0.0,0.0
+[detector_scientific_hud]:detector_base_hud
+
+item_visual                              = dynamics\devices\dev_detector_4\dev_detector_4_hud
 
 item_position							 = 0,0,0
 item_orientation						 = 0,0,0
 
-aim_hud_offset_pos						 = -0.051700,-0.028600,0.049500
-aim_hud_offset_pos_16x9					 = -0.051700,-0.028600,0.049500
-aim_hud_offset_rot						 = 0,0,0
-aim_hud_offset_rot_16x9					 = 0,0,0
+hands_position_16x9				= 0.000000,-0.077200,0.1661324
+hands_orientation_16x9			= 0.000000,0.000000,0.000000
+hands_position				= 0.000000,-0.077200,0.1661324
+hands_orientation			= 0.000000,0.000000,0.000000
+
+aim_hud_offset_pos_16x9				= -0.071950,0.034850,0.000000
+aim_hud_offset_rot_16x9				= -0.009705,-0.006320,0.000000
+aim_hud_offset_pos				= -0.071950,0.034850,0.000000
+aim_hud_offset_rot				= -0.009705,-0.006320,0.000000
 
 anm_show								 = veles_draw
-anm_show_fast							 = veles_draw_fast	;_quick
+anm_show_fast							 = veles_draw_fast
 anm_hide								 = veles_hide
 anm_hide_fast							 = veles_hide_fast
 anm_idle								 = veles_idle
 anm_idle_moving							 = veles_walk
-anm_idle_moving_slow 					 = veles_slow, veles_walk
-anm_idle_moving_crouch 					 = veles_slow_down, veles_walk
-anm_idle_sprint_start				     = veles_sprint_start
-anm_idle_sprint					         = veles_sprint
-anm_idle_sprint_end					     = veles_sprint_end
+anm_idle_sprint							 = veles_sprint
 
-anm_aim_start							 = veles_aim_start
-anm_aim_end								 = veles_aim_end
-anm_idle_aim							 = veles_aim
-anm_idle_aim_moving						 = veles_aim_walk
-anm_shots_aim							 = veles_aim_shoot
-anm_shots								 = veles_shoot
-anm_empty_fire_aim						 = veles_aim
-anm_empty_fire							 = veles_shoot
-anm_firemode							 = veles_firemode
-anm_firemode_aim						 = veles_aim
-anm_hand_draw							 = veles_hand_draw
-anm_hand_hide							 = veles_hand_hide
-anm_bolt_start							 = veles_bolt_start
-anm_bolt_idle							 = veles_bolt_idle
-anm_bolt_end							 = veles_bolt_end
-anm_knife_1								 = veles_knife_kick_1
-anm_knife_2								 = veles_knife_kick_2
-
-;anm_switch_device                        = veles_headflash
-;anm_gasmask                              = veles_clear
+anm_show_16x9							 = veles_draw
+anm_show_fast_16x9						 = veles_draw_fast
+anm_hide_16x9							 = veles_hide
+anm_hide_fast_16x9						 = veles_hide_fast
+anm_idle_16x9							 = veles_idle
+anm_idle_moving_16x9					 = veles_walk
+anm_idle_sprint_16x9					 = veles_sprint
