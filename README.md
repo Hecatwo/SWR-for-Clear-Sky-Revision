@@ -1,8 +1,8 @@
 # SWR for Clear Sky Revision
 
 [![Game: S.T.A.L.K.E.R. Clear Sky](https://img.shields.io/badge/Game-S.T.A.L.K.E.R._Clear_Sky-orange?style=flat-square&logo=steam)](https://store.steampowered.com/app/20510/STALKER_Clear_Sky/)
-[![Mod: Clear Sky Revision](https://img.shields.io/badge/Mod-Clear_Sky_Revision-blue?style=flat-square)](#)
-[![Status: Work in Progress](https://img.shields.io/badge/Status-Work_in_Progress-yellow?style=flat-square)](#)
+[![Mod: Clear Sky Revision](https://img.shields.io/badge/Mod-Clear_Sky_Revision-blue?style=flat-square)](https://ap-pro.ru/forums/topic/10730-clear-sky-revision)
+[![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen?style=flat-square)](#)
 
 > A custom adaptation bringing the high-quality weapon animations of **Stalker Weapon Reanimation (SWR)** into the **Clear Sky Revision** overhaul mod.
 
@@ -28,7 +28,7 @@
 
 ## Known Issues
 
-* **BM16 & P90 Movement Speed:** Walking animations for both weapons appear slower than other guns.
+* **BM16 & P90 Small Inconsistency:** Walking animations for both weapons appear slower than other guns.
 * **P90 Sight Shenanigans:** Reticle renders outside the gun model, hopefully not too noticeable.
 
 ---
