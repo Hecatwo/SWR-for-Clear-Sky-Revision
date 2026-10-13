@@ -1,0 +1,307 @@
+[wpn_abakan]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+discovery_dependency    =
+$spawn               = "weapons\abakan"   ; name and section in level editor
+$npc              = on
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                = WP_AK74         ; class of the weapon that corresponding to CPP class
+min_radius           = 30           ; [] for AI
+max_radius           = 100          ; [] for AI
+description          = st_wpn_abakan_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 6
+
+default_to_ruck         = false
+sprint_allowed               = true
+control_inertion_factor = 1.0
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof             = 0.5, 1.0, 150
+reload_dof           = 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 0.7              ; во сколько раз увеличивается eye_fov
+;-------------------------------------------------------------------------------
+upgrades                = up_gr_ab_abakan, up_gr_cd_abakan, up_gr_ef_abakan, up_gr_gh_abakan, up_gr_i_abakan, up_gr_j_abakan
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_u16a
+
+; MTB-Damian.Romanik [JUD-381]: config for gunsmith achievement
+full_upgrade_musthave	= up_j_abakan, up_i_abakan
+full_upgrade_oneof		= up_bdfh_abakan:up_aceg_abakan
+
+
+cost				= 6000            ; the price of the item
+weapon_class        = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
+
+ammo_limit			= 210          ; obsolete
+ammo_elapsed        = 30           ; obsolete
+ammo_elapsed       	= 30
+
+ammo_mag_size        = 30           ; clip (magazine) size
+fire_modes           = 1, 2, -1
+
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap  ; name of the ltx-section of used ammo
+grenade_class        = ammo_vog-25, ammo_vog-25p         ; name of the ltx-section of used grenades
+
+launch_speed         = 0
+hand_dependence      = 1
+single_handed        = 0
+
+slot                 = 2                ; // secondary
+animation_slot       = 2                ; type of the animation that will be used
+inv_name             = st_wpn_abakan               ; name in inventory
+inv_name_short       = st_wpn_abakan
+inv_weight           = 4.0
+
+inv_grid_width       = 5    ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
+inv_grid_x           = 6  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 2
+
+kill_msg_x        = 119
+kill_msg_y        = 199
+kill_msg_width    = 93
+kill_msg_height   = 32
+
+;-------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base    = 0.7        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.4f
+
+;отдача
+cam_relax_speed          = 10     ;скорость возврата в исходное положение
+cam_relax_speed_ai       = 360
+cam_dispersion           = 0.1     ;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc       = 0.6      ;увеличениe cam_dispersion с каждvм вvстрелом
+cam_dispersion_frac      = 0.7    ;ствол будет подvматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle            = 10.0       ;максимальнvй угол отдачи
+cam_max_angle_horz       = 5.0      ;(degree) maximum shot horizontal degree
+cam_step_angle_horz      = 0.6    ;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed         = 10	    ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.1
+zoom_cam_dispersion_inc      = 0.5
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_max_angle           = 5.0
+zoom_cam_max_angle_horz      = 5.0
+zoom_cam_step_angle_horz     = 0.5
+
+fire_dispersion_condition_factor = 15        ;увеличение дисперсии в процентах при максимальном износе
+misfire_probability        = 0.005 ;вероятность осечки при максимальном износе
+condition_shot_dec         = 0.0002 ;увеличение износа при каждом вvстреле
+;-------------------------------------------------------------------------------
+
+
+
+position                = -0.026, -0.178, 0.0
+orientation             = 0, 0, 0
+
+
+fire_point				= -0.0,0.228,0.713
+fire_point2             = -0.0,0,153.608
+
+flame_particles         = weapons\generic_weapon05
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point             = 0.120000,0.000000,0.070000
+shell_dir               = 0.0, 0.0, 0.4
+shell_particles         = weapons\generic_shells
+
+PDM_disp_base           = 1.0
+PDM_disp_vel_factor     = 1.8
+PDM_disp_accel_factor   = 1.8
+PDM_disp_crouch         = 1.0
+PDM_disp_crouch_no_acc  = 1.0
+
+; ttc
+hit_power               = 0.4, 0.4, 0.4, 0.4
+hit_impulse          = 100    ; size of physic impulse by bullet
+hit_type                = fire_wound            ; [] type of the wound
+
+hit_probability_gd_novice  = 0.80
+hit_probability_gd_stalker = 0.80
+hit_probability_gd_veteran = 0.80
+hit_probability_gd_master  = 0.80
+
+fire_distance           = 150                  ; maximum fire distance that bullet can fly
+bullet_speed            = 400                ; starting bullet speed
+rpm                     = 650
+rpm_empty_click         = 200
+; end ttc
+
+use_aim_bullet          = true                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 3.0
+
+hud                     = wpn_abakan_hud
+
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position          = -0.26,-0.11,0.25                                ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation       = -15,-9,110                                        ; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_abakan\wpn_abakan.ogf
+
+light_disabled                                = false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 4
+;cost                   = 2100
+
+;addons
+scope_status               = 2                   ; 0 - no addon
+silencer_status            = 2                   ; 1 - permanent
+grenade_launcher_status    = 0                   ; 2 - attachable
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time                        = 0.25
+scope_zoom_factor       = 63                                                ; fov for zoom mode
+
+scope_texture			= wpn_crosshair
+silencer_name              = wpn_addon_silencer_rifle    ; section name for the attachable silencer
+silencer_x              = 228                ; offset in inventory icon
+silencer_y              = 9
+grenade_launcher_name      = wpn_addon_grenade_launcher; section name for the attachable grenade launcher
+grenade_launcher_x         = 126                ; offset in inventory icon
+grenade_launcher_y         = 24
+scopes_sect				= scope_abakan, scope_x4_abakan
+
+;звуки
+snd_draw                = weapons\ak74_draw
+snd_holster             = weapons\generic_holster
+snd_shoot               = weapons\n_abakan_shot
+snd_empty               = weapons\gen_empty, 0.5
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload 				= weapons\ak74\abakan_reload_full
+snd_reload_grenade 		= weapons\ak74\ak74_gl_reload
+snd_switch 				= weapons\ak74\ak74_gl_activate
+
+
+;настройки для глушителя
+silencer_hit_power      = 0.55, 0.55, 0.55, 0.55
+silencer_hit_impulse    = 120
+silencer_fire_distance  = 250
+silencer_bullet_speed   = 600
+
+;silencer_flame_particles  = weapons\generic_weapon01
+silencer_smoke_particles   = weapons\generic_shoot_00
+
+snd_silncer_shot        = weapons\w_ak74_shot1
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_abakan_hud]
+zoom_hide_crosshair        = true
+attach_place_idx        = 0
+item_visual                = dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf
+
+item_position									   = 0,0,0
+item_orientation								   = 0,0,0
+
+hands_position_16x9 = 0.019800,-0.029300,0.110298
+hands_orientation_16x9 = 0.500000,0.400000,0.800000
+hands_position = 0.019800,-0.029300,0.110298
+hands_orientation = 0.500000,0.400000,0.800000
+
+aim_hud_offset_pos_16x9 = -0.079190,0.040982,-0.047000
+aim_hud_offset_rot_16x9 = 0.003538,0.009333,0.007887
+aim_hud_offset_pos = -0.079190,0.040982,-0.047000
+aim_hud_offset_rot = 0.003538,0.009333,0.007887
+
+gl_hud_offset_pos_16x9 = -0.054123,-0.261087,0.352192
+gl_hud_offset_rot_16x9 = -0.465148,0.043398,0.082500
+gl_hud_offset_pos = -0.054123,-0.261087,0.352192
+gl_hud_offset_rot = -0.465148,0.043398,0.082500
+
+shell_bone                                         = wpn_body
+shell_dir                                          = 0.0, 1.0, 0.0
+shell_point                                        = 200,200,200
+
+fire_bone                                          = wpn_body
+fire_bone2                                         = wpn_body
+fire_point                                         = 0.003025,-0.002950,0.345626
+fire_point2                                        = 0.000000,-0.075000,0.280000
+
+anm_show                = abakan_draw
+anm_hide                = abakan_holster
+anm_idle                = abakan_idle
+anm_idle_sprint         = abakan_sprint
+anm_idle_moving         = abakan_moving
+anm_shots               = abakan_shoot_aim, shoot_new
+anm_reload              = abakan_reload_empty, reload_empty_new
+anm_idle_aim            = abakan_idle_aim 
+anm_bore                = abakan_idle_bore
+
+anm_switch              = abakan_g_off, g_off
+anm_switch_g            = abakan_g_on, g_on
+
+anm_hide_w_gl           = abakan_holster_w_gl
+anm_show_w_gl           = abakan_draw_w_gl
+anm_idle_w_gl           = abakan_idle_w_gl
+anm_shots_w_gl          = abakan_w_gl_shoot_aim, shoot_new
+anm_reload_w_gl         = abakan_reload_empty_w_gl, reload_empty_new
+anm_idle_w_gl_aim       = abakan_idle_aim_w_gl
+anm_idle_sprint_w_gl    = abakan_sprint_w_gl
+anm_idle_moving_w_gl    = abakan_moving_w_gl
+anm_bore_w_gl           = abakan_idle_w_gl_bore
+
+anm_show_g             	= abakan_draw_g, idle_g
+anm_hide_g             	= abakan_holster_g, idle_g
+anm_idle_g             	= abakan_idle_g, idle_g
+anm_reload_g           	= abakan_reload_g, reload_g
+anm_idle_g_aim         	= abakan_idle_aim_g, idle_g
+anm_shots_g            	= abakan_shoot_g, idle_g
+anm_idle_sprint_g       = abakan_sprint_g, idle_g
+anm_idle_moving_g       = abakan_moving_g, idle_g
+anm_bore_g              = abakan_idle_g_bore, idle_g
+
+;-----------------------------------------------------------------------------
+; Уникальнvе
+;-----------------------------------------------------------------------------
+
+[wpn_abakan_up2]:wpn_abakan
+$spawn               = "weapons\abakan_up2"   ; name and section in level editor
+
+grenade_launcher_status    = 2                   ; 2 - attachable
+
+;-------------------------------------------------------------------------------
+upgrades                = up_gr_ab_abakan, up_gr_cd_abakan, up_gr_ef_abakan, up_gr_gh_abakan, up_gr_i_abakan, up_gr_j_abakan
+installed_upgrades      = up_a_abakan, up_c_abakan, up_e_abakan, up_i_abakan 
+upgrade_scheme          = upgrade_scheme_u16a
+
+[wpn_abakan_m1]:wpn_abakan
+$spawn               = "weapons\abakan_m1"   ; name and section in level editor
+inv_name          = st_wpn_abakan_m1
+inv_name_short    = st_wpn_abakan_m1
+description          	= st_wpn_abakan_m1_descr
+cost					= 7500            ; the price of the item
+silencer_status            = 1
+inv_grid_width       = 6
+inv_grid_x           = 0  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 20
+inv_weight           = 4.1
+fire_dispersion_base    = 0.55
+fire_dispersion_condition_factor = 13
+flame_particles					= 
+light_disabled					= true
+snd_shoot        = weapons\w_ak74_shot1

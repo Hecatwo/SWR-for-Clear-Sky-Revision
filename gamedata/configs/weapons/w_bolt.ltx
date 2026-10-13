@@ -1,0 +1,72 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; BOLT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bolt]:identity_immunities,weapon_probability,default_weapon_params
+class				= II_BOLT
+cform				= skeleton
+visual				= dynamics\devices\dev_bolt\dev_bolt.ogf
+inv_name			= st_bolt
+$prefetch 			= 16
+inv_name_short		= st_bolt
+inv_weight			= .0
+
+ef_weapon_type		= 1
+
+
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x			= 15
+inv_grid_y			= 27
+
+animation_slot		= 7
+single_handed		= 0
+
+slot				= 5
+hud					= bolt_hud
+force_min			= 10
+force_const			= 20
+force_max			= 30
+force_grow_speed		= 10
+
+destroy_time		= 3000
+
+cost				= 0
+
+throw_point			= 0,0.4,0.5
+throw_dir			= 0,0,1
+
+PDM_disp_base           = 1.0
+PDM_disp_vel_factor     = 1.0
+PDM_disp_accel_factor   = 1.0
+PDM_disp_crouch         = 1.0
+PDM_disp_crouch_no_acc  = 1.0
+
+[bolt_hud]:hud_base
+item_visual                 = dynamics\devices\dev_bolt\dev_bolt_hud
+attach_place_idx            = 0
+        
+item_position               = 0, 0, 0
+item_orientation            = 0, 0, 0
+        
+hands_position_16x9				= 0.000000,-0.077200,0.1661324
+hands_orientation_16x9			= 0.000000,0.000000,0.000000
+hands_position				= 0.000000,-0.077200,0.1661324
+hands_orientation			= 0.000000,0.000000,0.000000
+
+fire_bone                   = wpn_body
+fire_point                  = 0, 0, 0
+        
+throw_point					= 0.0,0.4,0.3
+throw_dir					= 0,0,1
+
+anm_hide				= owa_bolt_hide, idle
+anm_show				= owa_bolt_draw, idle
+anm_idle				= owa_bolt_idle, idle
+anm_bore				= owa_bolt_bore, idle
+anm_idle_moving	 		= owa_bolt_walk, idle
+anm_idle_sprint	 		= owa_bolt_sprint, idle
+
+anm_throw_begin			= owa_bolt_throw_start, idle
+anm_throw_idle			= owa_bolt_throw_idle, idle
+anm_throw				= owa_bolt_throw_end, idle

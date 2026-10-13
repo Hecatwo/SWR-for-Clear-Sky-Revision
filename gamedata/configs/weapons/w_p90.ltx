@@ -1,0 +1,283 @@
+[wpn_p90]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn                  = "weapons\p90"               ; option for Level Editor
+$npc              = on           ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_LR300
+description          	= st_wpn_p90_descr
+ef_main_weapon_type     = 2
+ef_weapon_type          = 6
+
+default_to_ruck         = false
+sprint_allowed          = true
+control_inertion_factor = 1.0
+
+;-------------------------------------------------------------------------------
+cost              = 24000            ; the price of the item
+weapon_class      = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
+inv_weight        = 2.8
+
+upgrades                = ;up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
+installed_upgrades      =
+upgrade_scheme          = ;upgrade_scheme_mp5
+
+;----TTX--------------------------------------------------------------------------
+hit_power               = 0.38, 0.42, 0.45, 0.48		;size of damage by bullet
+hit_impulse		 		= 150		;size of physic impulse by bullet	
+hit_type 				= fire_wound 	;[] type of the wound
+fire_distance            		= 200		;maximum fire distance that bullet can fly
+bullet_speed				= 715		;starting bullet speed
+rpm                      		= 900		;max round per minute
+rpm_empty_click         = 200
+
+use_aim_bullet          = true                ; bullet aiming enabled
+time_to_aim             = 1.0
+
+hud                     = wpn_p90_hud
+
+old_misfire 				= true
+misfire_probability 			= 0.003
+misfire_condition_k			= 0.05
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.057
+condition_shot_dec      	= 0.0001
+condition_queue_shot_dec	= 0.0001
+
+ammo_elapsed      = 50
+ammo_mag_size     = 50           ; clip (magazine) size
+fire_modes		  = 1, 3, -1
+ammo_class		  = ammo_5.7x28_fmj,ammo_5.7x28_ap
+grenade_class     = ammo_vog-25         ; name of the ltx-section of used grenades
+
+launch_speed      = 0
+hand_dependence   = 1
+single_handed     = 0
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof             = 0.5, 1.0, 180
+reload_dof           = 0.0, 0.5, 5, 2
+
+;---DISPERSION-------------------------------------------------------------------
+fire_dispersion_base			= 0.25
+control_inertion_factor			= 1.1f
+crosshair_inertion   	= 4.35
+
+;---CAMERA-----------------------------------------------------------------------
+cam_return			 = 0
+cam_relax_speed         		= 4.0 ;0.3
+cam_relax_speed_ai   = 120.75
+cam_dispersion          		= 0.3
+cam_dispersion_inc			= 0.1
+cam_dispersion_frac			= 0.7
+cam_max_angle				= 4.5
+cam_max_angle_horz			= 7.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 0.5		;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 			= 1.1
+PDM_disp_accel_factor 			= 1.1
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 			= 1.0
+
+zoom_cam_relax_speed        = 10    ; scope & ironsight
+zoom_cam_relax_speed_ai     = 120.75
+zoom_cam_dispersion         = 0.5
+zoom_cam_dispersion_inc     = 0.25
+zoom_cam_dispersion_frac    = 1.0
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 50.0
+zoom_cam_step_angle_horz    = 1.5
+
+fire_dispersion_condition_factor = 5
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0
+holder_fov_modifier     = 1.0
+
+min_radius              = 0
+max_radius              = 50
+
+hit_probability_gd_novice  = 0.80
+hit_probability_gd_stalker = 0.80
+hit_probability_gd_veteran = 0.80
+hit_probability_gd_master  = 0.80
+
+;-------------------------------------------------------------------------------
+slot              = 2                ; // secondary
+animation_slot    = 8                ; type of the animation that will be used
+inv_name          = st_wpn_p90               ; name in inventory
+inv_name_short    = st_wpn_p90
+
+inv_grid_width    = 3
+inv_grid_height   = 1
+inv_grid_x        = 0
+inv_grid_y        = 22
+
+upgr_icon_x			= 561
+upgr_icon_y			= 129
+upgr_icon_width		= 292
+upgr_icon_height   	= 114
+
+kill_msg_x        = 72
+kill_msg_y        = 82
+kill_msg_width    = 56
+kill_msg_height   = 23
+
+;-------------------------------------------------------------------------------
+position                = -0.026, -0.185, -0.0
+orientation             = 0,0,0
+
+fire_point             		=  0.0, 0.262, 0.27
+fire_point2             = 0.0, 0.262, 0.27
+
+flame_particles         = weapons\generic_weapon05
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point          = 0.00, 0.262, -0.05
+shell_dir            = 0.0, 1.0, 0.0
+
+shell_particles         = weapons\generic_shells
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position         	= -0.16,-0.40,0.25
+strap_orientation      	= -10,-5,10
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_p90\wpn_p90.ogf
+
+light_disabled                                = false
+light_color					= 0.6,0.5,0.3
+light_range					= 5
+light_var_color				= 0.05
+light_var_range				= 0.5
+light_time 					= 0.2	
+
+ph_mass                 = 5
+
+;addons
+scope_status            = 0                   ; 0 - no addon
+silencer_status         = 2                   ; 1 - permanent
+grenade_launcher_status = 0                   ; 2 - attachable
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time        = 0.25
+scope_zoom_factor       = 50                                                ; fov for zoom mode
+
+scope_name              = wpn_addon_scope       ; section name for the attachable scope
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+silencer_name           = wpn_addon_silencer_rifle    ; section name for the attachable silencer
+silencer_x 				= 124				; offset in inventory icon
+silencer_y 				= -2	
+grenade_launcher_name   = wpn_addon_grenade_launcher; section name for the attachable grenade launcher
+grenade_launcher_x      = 126                ; offset in inventory icon
+grenade_launcher_y      = 24
+
+;SOUNDS
+snd_draw                = weapons\ak74_draw
+snd_holster             = weapons\generic_holster
+snd_shoot               = weapons\p90_shot
+
+snd_empty               = weapons\gen_empty, 0.5
+snd_reload              = weapons\p90\p90_reload
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\draw_silent
+snd_bore1				= weapons\mp5_bore
+
+silencer_smoke_particles   = weapons\generic_shoot_00
+
+snd_silncer_shot        = weapons\w_ak74_shot1
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+silencer_hit_power       		= 0.42
+silencer_hit_impulse	 		= 120
+silencer_fire_distance   		= 200
+silencer_bullet_speed	 		= 715
+
+
+[wpn_p90_hud]
+zoom_hide_crosshair     = true
+attach_place_idx        = 0
+item_visual             = dynamics\weapons\wpn_p90\wpn_p90_hud.ogf
+
+;--- HUD POSITIONS (imported from animation mod) ---
+hands_position				= -0.028625, 0.027275, -0.233324
+hands_orientation			= 0, 0, 0
+hands_position_16x9			= -0.028625, 0.027275, -0.233324
+hands_orientation_16x9		= 0, 0, 0
+
+item_position				= 0,0,0
+item_orientation			= 0,0,0
+
+;--- HUD FIRE/SHELL POINTS (imported from animation mod) ---
+shell_point             	= 200, 200, 200
+shell_dir               	= 0, 1, 0
+shell_bone              	= wpn_body
+
+fire_point					= 0.000000, 0.011000, 0.168700
+fire_bone               	= wpn_body
+fire_point2					= 0, 0, 0
+fire_bone2              	= wpn_body
+
+;--- HUD AIM OFFSETS (imported from animation mod) ---
+aim_hud_offset_pos			= -0.069506, 0.021301, -0.142094
+aim_hud_offset_rot			= 0.000000, 0.000000, 0.000000
+
+aim_hud_offset_pos_16x9		= -0.069506, 0.021301, -0.142094
+aim_hud_offset_rot_16x9		= 0.000000, 0.000000, 0.000000
+
+;--- HUD LOWERED OFFSETS (imported from animation mod) ---
+lowered_hud_offset_pos		= 0.112558, -0.022031, 0
+lowered_hud_offset_pos_16x9	= 0.112558, -0.022031, 0
+
+gl_hud_offset_pos 			= 0,0,0
+gl_hud_offset_rot 			= 0,0,0
+
+gl_hud_offset_pos_16x9		= 0,0,0
+gl_hud_offset_rot_16x9		= 0,0,0
+
+lean_hud_offset_pos			= 0,0,0
+lean_hud_offset_rot			= 0,0,0
+
+;--- HUD ANIMATIONS (imported from animation mod) ---
+anm_show                     = p90_draw
+anm_hide                     = p90_holster
+
+anm_idle                     = p90_idle
+anm_idle_slow                = p90_moving_slow
+anm_idle_crouch              = p90_crouch
+
+anm_idle_aim                 = p90_idle_aim
+anm_idle_aim_moving          = p90_moving_aim
+
+anm_idle_moving              = p90_moving
+anm_idle_moving_slow         = p90_moving_slow
+anm_idle_moving_crouch       = p90_crouch
+
+anm_idle_sprint_start        = p90_sprint_start
+anm_idle_sprint              = p90_sprint
+anm_idle_sprint_end          = p90_sprint_end
+
+anm_shots                    = p90_shoot, shoot
+anm_shots_when_aim           = p90_shoot_aim, shoot
+anm_firemode                 = p90_firemode
+
+anm_reload                   = p90_reload, reload
+anm_reload_empty             = p90_reload_empty, reload_empty
+anm_reload_misfire           = p90_misfire, misfire
+
+anm_bore                     = p90_idle_aim

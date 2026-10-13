@@ -1,0 +1,311 @@
+[wpn_bm16]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection		= spawn_group
+discovery_dependency 	=
+$spawn                  = "weapons\bm16"		; option for Level Editor
+$npc			 		= on						; option for Level Editor
+$prefetch 		 		= 8
+scheduled               = off    				; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_BM16
+min_radius              = 0
+max_radius              = 50
+description				= st_wpn_bm16_descr
+
+ef_main_weapon_type		= 1
+ef_weapon_type			= 7
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof			    = 0.5, 1.0, 180
+
+;-----------------------------------------------------------------------------
+upgrades                = up_gr_a_bm16, up_gr_b_bm16, up_gr_c_bm16
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_u3
+
+;-------------------------------------------------------------------------------
+holder_range_modifier	= 1.0     ; во сколько раз увеличивается eye_range
+holder_fov_modifier		= 0.7     ; во сколько раз увеличивается eye_fov
+;-------------------------------------------------------------------------------
+
+cost					= 200
+weapon_class			= shotgun
+
+ammo_limit		 		= 60
+ammo_current		 	= 10
+ammo_elapsed		 	= 0
+
+ammo_mag_size		 	= 2
+ammo_class		 		= ammo_12x70_buck,ammo_12x76_zhekan,ammo_12x76_dart
+
+;-------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base		= 1.1  	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor		= 1.0f
+
+;отдача
+cam_relax_speed         = 4.0		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 5.5 	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 5.5 	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 0.5 	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 15 		;максимальный угол отдачи
+cam_max_angle_horz		= 15 		;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 5.5 	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed        = 4.0    ; scope & ironsight
+zoom_cam_relax_speed_ai     = 120.75
+zoom_cam_dispersion         = 3.5
+zoom_cam_dispersion_inc     = 3.5
+zoom_cam_dispersion_frac    = 0.5
+zoom_cam_max_angle          = 5.0
+zoom_cam_max_angle_horz     = 5.0
+zoom_cam_step_angle_horz    = 3.5
+
+fire_dispersion_condition_factor = 10	;увеличение дисперсии в процентах при максимальном износе
+misfire_probability 			= 0.0	;вероятность осечки при максимальном износе
+misfire_condition_k				= 0.05
+condition_shot_dec 				= 0.003 	;увеличение износа при каждом выстреле
+;-------------------------------------------------------------------------------
+
+hand_dependence 		= 1
+single_handed			= 0
+
+slot 					= 2
+animation_slot			= 3
+
+
+inv_name				= st_wpn_bm16
+inv_name_short			= st_wpn_bm16
+inv_weight				= 1.9
+
+inv_grid_width			= 3
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 1
+
+kill_msg_x				= 0
+kill_msg_y		  		= 104
+kill_msg_width			= 54
+kill_msg_height			= 16
+
+position                 		= -0.026, -0.096, 0.045
+orientation              		= 0, 30, 0      ;значение устанавливается в градусах
+
+shell_point				= 0.0, 0.136, 0.07
+fire_point              = 0.000000,0.136000,0.390000     ;r
+fire_point2             = 0.000000,0.136000,0.390000		;l
+
+flame_particles	= weapons\generic_weapon05
+smoke_particles	= weapons\generic_shoot_00
+rpm_empty_click = 200
+
+; ttc
+hit_power       = 1.05, 1.05, 1.05, 1.05
+hit_impulse     = 150
+hit_type 		= fire_wound
+
+hit_probability_gd_novice	= 0.80
+hit_probability_gd_stalker	= 0.80
+hit_probability_gd_veteran	= 0.80
+hit_probability_gd_master	= 0.80
+
+fire_distance       	= 35
+bullet_speed			= 170
+rpm                 	= 1000
+; end ttc
+
+PDM_disp_base 			= 1.0
+PDM_disp_vel_factor 	= 1.1
+PDM_disp_accel_factor 	= 1.1
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+hud                      		= wpn_bm16_hud
+
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         			= -0.26,-0.11,0.15
+strap_orientation      			= -15,-9,110
+;на спине
+strap_bone0							= bip01_spine2
+strap_bone1							= bip01_spine1
+
+startup_ammo             		= 10
+visual                   		= dynamics\weapons\wpn_bm16\wpn_bm16.ogf
+
+light_color		 					= 0.6,0.5,0.3
+light_range		 					= 6.0
+light_var_color		 			= 0.05
+light_var_range		 			= 0.5
+light_time 		 					= 0.2
+
+ph_mass			 					= 3
+
+;addons
+scope_status						= 0
+silencer_status					= 0
+grenade_launcher_status			= 0
+
+zoom_enabled						= true
+scope_zoom_factor	    			= 55
+
+;звуки
+snd_draw				            = weapons\generic_draw
+snd_holster			            	= weapons\generic_holster
+snd_shoot			            	= weapons\n_bm16_shot
+snd_empty			            	= weapons\generic_empty
+snd_shoot_duplet					= weapons\n_bm16_shot
+snd_shoot_1			            	= weapons\n_bm16_shot
+
+snd_reload			            	= weapons\bm16\bm16_reload_full		;reload both
+snd_reload_1		            	= weapons\bm16\bm16_reload		;reload left
+
+kick_support = true
+
+[wpn_bm16_hud]:hud_base
+item_visual                         = dynamics\weapons\wpn_bm16\wpn_bm16_hud
+
+hands_position                      = 0.007700, 0.013975, -0.015000
+hands_position_16x9                 = 0.007700, 0.013975, -0.015000
+hands_orientation                   = 0, 0, 0
+hands_orientation_16x9              = 0, 0, 0
+
+item_position                       = -0.001000, -0.003400, 0.000000
+item_orientation                    = 0, 0, 0
+
+aim_hud_offset_pos          		= -0.063625, 0.039900, 0.010000
+aim_hud_offset_rot          		= -0.023001, -0.002187, 0.000000
+aim_hud_offset_pos_16x9          	= -0.063625, 0.039900, 0.010000
+aim_hud_offset_rot_16x9          	= -0.023001, -0.002187, 0.000000	
+
+lowered_hud_offset_pos              = 0.115494, -0.006461, 0
+lowered_hud_offset_pos_16x9         = 0.115494, -0.006461, 0
+
+fire_bone                           = wpn_body
+fire_point                          = 0.000000, 0.013200, 0.125400
+
+shell_bone                          = wpn_body
+shell_dir                           = 0, 1, 0
+shell_point                         = 200, 200, 200
+
+;-------------------------------------------------------------------------------
+; HUD ANIMATIONS
+;-------------------------------------------------------------------------------
+anm_show_0                          = toz66_draw, idle_empty
+anm_show_1                          = toz66_draw, idle_one
+anm_show_2                          = toz66_draw, idle
+
+anm_hide_0                          = toz66_holster, idle_empty
+anm_hide_1                          = toz66_holster, idle_one
+anm_hide_2                          = toz66_holster, idle
+
+anm_idle_0                          = toz66_idle, idle_empty
+anm_idle_1                          = toz66_idle, idle_one
+anm_idle_2                          = toz66_idle, idle
+
+anm_idle_aim_0                      = toz66_idle_aim, idle_empty
+anm_idle_aim_1                      = toz66_idle_aim, idle_one
+anm_idle_aim_2                      = toz66_idle_aim, idle
+
+anm_idle_crouch_0                   = toz66_crouch, idle_empty
+anm_idle_crouch_slow_0              = toz66_crouch, idle_empty
+anm_idle_slow_0                     = toz66_moving_slow, idle_empty
+anm_idle_crouch_1                   = toz66_crouch, idle_one
+anm_idle_crouch_slow_1              = toz66_moving_slow, idle_one
+anm_idle_slow_1                     = toz66_moving_slow, idle_one
+anm_idle_crouch_2                   = toz66_crouch, idle
+anm_idle_crouch_slow_2              = toz66_crouch, idle
+anm_idle_slow_2                     = toz66_moving_slow, idle
+
+anm_idle_aim_moving_0               = toz66_moving_aim, idle_empty
+anm_idle_aim_moving_1               = toz66_moving_aim, idle_one
+anm_idle_aim_moving_2               = toz66_moving_aim, idle
+
+anm_idle_moving_0                   = toz66_moving_slow, idle_empty
+anm_idle_moving_1                   = toz66_moving_slow, idle_one
+anm_idle_moving_2                   = toz66_moving_slow, idle
+anm_idle_moving_crouch_0            = toz66_moving_slow
+anm_idle_moving_crouch_slow_0       = toz66_moving_slow, idle_empty
+anm_idle_moving_slow_0              = toz66_moving_slow, idle_empty
+anm_idle_moving_crouch_1            = toz66_moving_slow, idle_one
+anm_idle_moving_crouch_slow_1       = toz66_moving_slow, idle_one
+anm_idle_moving_slow_1              = toz66_moving_slow, idle_one
+anm_idle_moving_crouch_2            = toz66_moving_slow, idle
+anm_idle_moving_crouch_slow_2       = toz66_moving_slow, idle
+anm_idle_moving_slow_2              = toz66_moving_slow, idle
+
+anm_idle_sprint_start_0             = toz66_sprint_start, idle_empty
+anm_idle_sprint_start_1             = toz66_sprint_start, idle_one
+anm_idle_sprint_start_2             = toz66_sprint_start, idle
+
+anm_idle_sprint_0                   = toz66_sprint, idle_empty
+anm_idle_sprint_1                   = toz66_sprint, idle_one
+anm_idle_sprint_2                   = toz66_sprint, idle
+
+anm_idle_sprint_end_0               = toz66_sprint_end, idle_empty
+anm_idle_sprint_end_1               = toz66_sprint_end, idle_one
+anm_idle_sprint_end_2               = toz66_sprint_end, idle
+
+anm_reload_1                        = toz66_reload, reload
+anm_reload_2                        = toz66_reload_empty, reload_empty
+anm_reload_jammed_1                 = toz66_misfire, misfire
+anm_reload_jammed_2                 = toz66_misfire, misfire_empty
+
+anm_shoot_1                         = toz66_shoot_last, shoot_last
+anm_shoot_2                         = toz66_shoot, shoot
+anm_shoot_aim_1                     = toz66_shoot_aim, shoot_last
+anm_shoot_aim_2                     = toz66_shoot_aim, shoot
+
+; fallback aliases for engines that query "anm_shot_*" instead of "anm_shoot_*"
+anm_shot_1                          = toz66_shoot_last, shoot_last
+anm_shot_2                          = toz66_shoot, shoot
+anm_shot_aim_1                      = toz66_shoot_aim, shoot_last
+anm_shot_aim_2                      = toz66_shoot_aim, shoot
+
+; bore (tired idle) aliases required by engine
+anm_bore_0                          = toz66_idle, idle_empty
+anm_bore_1                          = toz66_idle, idle_one
+anm_bore_2                          = toz66_idle, idle
+
+anm_bore_aim_0                      = toz66_idle_aim, idle_empty
+anm_bore_aim_1                      = toz66_idle_aim, idle_one
+anm_bore_aim_2                      = toz66_idle_aim, idle
+
+[wpn_bm16_full]:wpn_bm16
+$spawn               = "weapons\bm16_full"   ; name and section in level editor
+visual                   	= dynamics\weapons\wpn_bm16_full\wpn_bm16_full.ogf
+hud                      	= wpn_bm16_full_hud
+
+inv_name				= st_wpn_bm16_full
+inv_name_short			= st_wpn_bm16_full
+description				= st_wpn_bm16_full_descr
+cost					 	= 300
+
+inv_weight					= 5.0
+
+fire_point               	= 0.0, 0.136, 0.74     	;r
+fire_point2              	= 0.0, 0.136, 0.74		;l
+
+inv_grid_width			= 6
+inv_grid_x				= 0
+inv_grid_y				= 38
+
+fire_dispersion_base    = 0.9    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.1
+
+cam_dispersion          = 5.0 	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 5.0 	;увеличениe cam_dispersion с каждым выстрелом
+
+hit_impulse     = 130
+fire_distance       	= 55
+
+[wpn_bm16_full_hud]:wpn_bm16_hud
+item_visual                         = dynamics\weapons\wpn_bm16\wpn_bm16_full_hud.ogf
+
+aim_hud_offset_pos          		= -0.064625, 0.045305, 0.020000
+aim_hud_offset_rot          		= -0.002901, -0.000670, 0.000000
+aim_hud_offset_pos_16x9          	= -0.064625, 0.045305, 0.020000
+aim_hud_offset_rot_16x9          	= -0.002901, -0.000670, 0.000000		
+
+fire_point                          = 0.000000, 0.013200, 0.629393
