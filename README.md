@@ -8,6 +8,8 @@
 
 Damage, recoil, and other ballistics remain identical to their Clear Sky Revision counterparts.
 
+Gunshot sounds has been replaced to be more punchier.
+
 ---
 
 ## Screenshots
@@ -24,7 +26,7 @@ Damage, recoil, and other ballistics remain identical to their Clear Sky Revisio
 
 ## To-Do List
 
-- [ ] **Sound Overhaul:** Replace default firing sounds with something more punchy.
+- [ ] Adapt SRP Alternative Ballistic (Maybe).
 
 ---
 
@@ -46,6 +48,7 @@ Big thanks to the authors and modders whose work made this adaptation possible:
 * **syka-bluadt** — *SWR IX-Ray* adaptation
 * **Snowy** — Creator of *Clear Sky Revision*
 * **Naretos & Chocohex** — For helping with stuff and providing useful suggestion
+* **Sam** — Sound Assets
 
 ---
 
