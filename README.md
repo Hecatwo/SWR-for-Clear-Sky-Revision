@@ -18,7 +18,7 @@ Gunshot sounds has been replaced to be more punchier.
 
 | Preview 1 | Preview 2 |
 | :---: | :---: |
-| ![Preview 1](https://i.imgur.com/0LwvNJE.jpeg) | ![Preview 2](https://i.imgur.com/VGH25Uw.jpeg) |
+| ![Preview 1](https://i.imgur.com/0o73K4Q.jpeg) | ![Preview 2](https://i.imgur.com/EH5E9sF.jpeg) |
 
 </div>
 
